@@ -1,6 +1,5 @@
-@extends('navbar')
-
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" integrity="sha384-WJUUqfoMmnfkBLne5uxXj+na/c7sesSJ32gI7GfCk4zO4GthUKhSEGyvQ839BC51" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
 <div class="row justify-content-center">
     <div class="col-md-5">
         <main class="form-register w-100 m-auto">

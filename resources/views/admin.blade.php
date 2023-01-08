@@ -1,15 +1,12 @@
 @extends('navbar')
 @section('navhome')
-<a class="nav-link active" aria-current="page" href="/member">Home</a>
+<a class="nav-link active" aria-current="page" href="/admin">Home</a>
 @endsection
-@section('item1')
-<a class="nav-link" href="#">Cart</a>
-@endsection
-@section('item2')
-<a class="nav-link" href="#">History</a>
+@section('addItem')
+<a class="nav-link" href="#">Add Item</a>
 @endsection
 @section('item3')
-<a class="nav-link" href="/profileM">Profile</a>
+<a class="nav-link" href="/profileA">Profile</a>
 @endsection
 @section('logoutItem')
 <div>

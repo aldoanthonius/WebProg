@@ -1,6 +1,6 @@
-.navbar-nav{
+/* .navbar-nav{
     margin-left: 1000px;
-}
+} */
 .form-signin {
     max-width: 1000px;
     padding: 15px;
@@ -26,4 +26,39 @@
 .form-register input{
     border-radius: 0;
     margin-bottom: -1px;
+}
+
+.background{
+    background-image: url('https://cdn.unilinpanels.com/-/media/sites/panels/pages/projecten/dark-colours-in-retail/black-barrett-store-hong-kong.ashx?la=nl-BE&rev=1d857041b3f344f29b6bb5e094e63866&hash=7E4023ECB418C5886567CE196687D4F5');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+.text{
+    padding: 160px;
+    text-align: center;
+    color: white;
+    margin-right: 50px;
+}
+.text1{
+    font-size: 40px;
+    font-weight: bold;
+}
+.text2{
+    font-size: 20px;
+}
+.text3 .btn_regis{
+    font-family: bord;
+    color: white;
+    background-color: blue;
+    padding: 1vw 2vw;
+    font-size: 1vw;
+    /* margin-top: 10vh; */
+    border-radius: 5px;
+}
+
+#signin {
+    color: blue;
+    text-align: right;
+    float: right;
 }

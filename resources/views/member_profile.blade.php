@@ -8,9 +8,6 @@
 @section('item2')
 <a class="nav-link" href="#">History</a>
 @endsection
-@section('item3')
-<a class="nav-link" href="/profileM">Profile</a>
-@endsection
 @section('logoutItem')
 <div>
     <form action="/logout" method="POST">

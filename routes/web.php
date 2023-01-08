@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,10 +25,15 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/login', [LoginController::class, 'signin']);
+Route::get('/login', [LoginController::class, 'signin'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout',[LoginController::class, 'logout']);
 
 Route::get('/register', [RegisterController::class, 'register']);
 Route::post('/register', [RegisterController::class, 'afterRegis']);
 
-Route::get('/member', [MemberController::class, 'member']);
+Route::get('/member', [MemberController::class, 'member'])->middleware('auth','memberM');
+Route::get('/admin', [AdminController::class, 'admin'])->middleware('auth','adminM');
+
+Route::get('/profileM', [ProfileController::class,'profileM'])->middleware('auth','memberM');
+Route::get('/profileA', [ProfileController::class,'profileA'])->middleware('auth','adminM');
