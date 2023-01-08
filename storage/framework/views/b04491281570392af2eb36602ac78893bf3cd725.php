@@ -13,7 +13,7 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="" href="/">MAIBOUTIQUE</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -21,14 +21,27 @@
 
             <div class="navbar-nav">
                 <li class="nav-item">
-                    <a href="/login" class="nav-link">Sign In</a>
+                    <a href="/login" class="nav-link" id="signin">Sign In</a>
                 </li>
             </div>
           </div>
         </div>
       </nav>
-    <h1>MAIBOUTIQUE</h1>
 
+    <div class="background">
+            <div class="text">
+                <div class="text1">
+                    Welcome to MaiBoutique
+                </div>
+                <div class="text2">
+                    Online Boutique that Provides You with Various Clothes to Suit Your Various Activities
+                </div>
+                <div class="text3">
+                    <br>
+                    <a href="/register" class="btn_regis">SIGN UP NOW</a>
+                </div>
+            </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
