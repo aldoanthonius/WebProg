@@ -1,5 +1,9 @@
+<?php $__env->startSection('body'); ?>
 <?php $__env->startSection('navhome'); ?>
 <a class="nav-link active" aria-current="page" href="/member">Home</a>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('item0'); ?>
+<a class="nav-link" href="/memberSearch">Search</a>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('item1'); ?>
 <a class="nav-link" href="#">Cart</a>
@@ -11,8 +15,38 @@
 <div>
     <form action="/logout" method="POST">
         <?php echo csrf_field(); ?>
-        <button type="submit" class="btn btn-danger">Sign Out</button>
+        <button type="submit" class="btn btn-info">Sign Out</button>
     </form>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__currentLoopData = $profile; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+<div class="member">
+    <div class="text-profile">
+        My Profile
+    </div>
+    <div class="text-member">
+        member
+    </div>
+    <div>
+        username : <?php echo e($profile->username); ?>
+
+        <br>
+        <?php echo e($profile->email); ?>
+
+        <br>
+        Address : <?php echo e($profile->address); ?>
+
+        <br>
+        Phone : <?php echo e($profile->phone); ?>
+
+    </div>
+    <div>
+        <a href="/editProfile">edit profile</a>
+        <a href="">edit password</a>
+    </div>
 </div>
 <?php $__env->stopSection(); ?>
 

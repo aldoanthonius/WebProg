@@ -1,27 +1,32 @@
 <?php $__env->startSection('body'); ?>
 <?php $__env->startSection('navhome'); ?>
-<a class="nav-link active" aria-current="page" href="/member">Home</a>
+<a class="nav-link active" aria-current="page" href="/admin">Home</a>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('item0'); ?>
-<a class="nav-link" href="/memberSearch">Search</a>
+<a class="nav-link" href="/adminSearch">Search</a>
 <?php $__env->stopSection(); ?>
-<?php $__env->startSection('item1'); ?>
-<a class="nav-link" href="#">Cart</a>
-<?php $__env->stopSection(); ?>
-<?php $__env->startSection('item2'); ?>
-<a class="nav-link" href="#">History</a>
+<?php $__env->startSection('addItem'); ?>
+<a class="nav-link" href="#">Add Item</a>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('item3'); ?>
-<a class="nav-link" href="/profileM">Profile</a>
+<a class="nav-link" href="/profileA">Profile</a>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('logoutItem'); ?>
 <div>
     <form action="/logout" method="POST">
         <?php echo csrf_field(); ?>
-        <button type="submit" class="btn btn-info">Sign Out</button>
+        <button type="submit" class="btn btn-danger">Sign Out</button>
     </form>
 </div>
 <?php $__env->stopSection(); ?>
+<div class="search-text">
+    Search Your Favourite Clothes!
+</div>
+<form class="d-flex" action="/adminSearch">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
 <div class="row row-cols-1 row-cols-md-4 g-4 m-2">
@@ -45,4 +50,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Albert Anthony\Documents\Binus\ALDO Semester 5\Web Programming\LAB\Project\Project\resources\views/member.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Albert Anthony\Documents\Binus\ALDO Semester 5\Web Programming\LAB\Project\Project\resources\views/adminSearch.blade.php ENDPATH**/ ?>

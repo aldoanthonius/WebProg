@@ -1,3 +1,4 @@
+<?php $__env->startSection('body'); ?>
 <?php $__env->startSection('navhome'); ?>
 <a class="nav-link active" aria-current="page" href="/admin">Home</a>
 <?php $__env->stopSection(); ?>
@@ -11,6 +12,32 @@
         <?php echo csrf_field(); ?>
         <button type="submit" class="btn btn-danger">Sign Out</button>
     </form>
+</div>
+<?php $__env->stopSection(); ?>
+
+<div class="admin">
+    <div class="text-profile">
+        My Profile
+    </div>
+    <div class="text-admin">
+        admin
+    </div>
+    <div>
+        username : <?php echo e($profile->username); ?>
+
+        <br>
+        <?php echo e($profile->email); ?>
+
+        <br>
+        Address : <?php echo e($profile->address); ?>
+
+        <br>
+        Phone : <?php echo e($profile->phone); ?>
+
+    </div>
+    <div>
+        <a href="">edit password</a>
+    </div>
 </div>
 <?php $__env->stopSection(); ?>
 
