@@ -14,14 +14,19 @@ class EditController extends Controller
         return view('editProfile', compact('profile'));
     }
     public function editedProfile(Request $request){
-        $profile = DB::table('users')->where('id', Auth::user()->id)->first();
-        $dataUpdate = $request->validate([
+        $request->validate([
             'username'=>'required|max:20|min:5|unique:users',
             'email'=>'required|email:dns|unique:users',
             'phone'=>'required|min:10|max:13',
             'address'=>'required|min:5'
         ]);
 
+        DB::table('users')->where('id', Auth::user()->id)->update([
+            'username' => $request->username,
+            'email' => $request->email,
+            'phone'=> $request->phone,
+            'address'=> $request->address
+        ]);
 
         return redirect('/profileM')->with('success', 'Update Success');
 
@@ -30,13 +35,3 @@ class EditController extends Controller
 
 
 
-
-
-
-// DB::table('users')
-//         ->update([
-//             'username' => $request->username,
-//             'email' => $request->email,
-//             'phone' => $request->phone,
-//             'address' => $request->address
-//         ]);
