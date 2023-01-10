@@ -22,7 +22,7 @@
     <div class="col-md-5">
         <main class="form-register w-100 m-auto">
             <h1 class="h3 mb-3 fw-normal text-center">Update Profile</h1>
-            <form action="/register" method="post">
+            <form action="/profileM" method="post">
                 <?php echo csrf_field(); ?>
               <div class="form-floating">
                 <input type="text" name="username" class="form-control rounded-top <?php $__errorArgs = ['username'];
@@ -33,7 +33,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                id="username" placeholder="name@example.com" required value="<?php echo e(old('username'), $profile->username); ?>">
+                id="username" placeholder="name@example.com" required value="<?php echo e(old('username', Auth::user()->username)); ?>">
                 <label for="username">Username</label>
                 <?php $__errorArgs = ['username'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -58,7 +58,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                id="email" placeholder="name@example.com" required value="<?php echo e(old('email'), $profile->email); ?>">
+                id="email" placeholder="name@example.com" required value="<?php echo e(old('email', Auth::user()->email)); ?>">
                 <label for="floatingInput">Email address</label>
                 <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -83,7 +83,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                placeholder="Phone Number" pattern="[0-9]{4}[0-9]{4}[0-9]{4}" maxlength="12"  title="Fourteen   digits code" required value="<?php echo e(old('phone'), $profile->phone); ?>"/>
+                placeholder="Phone Number" pattern="[0-9]{4}[0-9]{4}[0-9]{4}" maxlength="12"  title="Fourteen   digits code" required value="<?php echo e(old('phone', Auth::user()->phone)); ?>"/>
                 <label>Phone Number <small>eg: 000000000000</small></label>
                 <?php $__errorArgs = ['phone'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -108,7 +108,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                id="address" placeholder="address" required value="<?php echo e(old('address'), $profile->address); ?>">
+                id="address" placeholder="address" required value="<?php echo e(old('address', Auth::user()->address)); ?>">
                 <label for="address">Address</label>
                 <?php $__errorArgs = ['address'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

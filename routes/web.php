@@ -41,7 +41,7 @@ Route::get('/profileM', [ProfileController::class,'profileM'])->middleware('auth
 Route::get('/profileA', [ProfileController::class,'profileA'])->middleware('auth','adminM');
 
 Route::get('/editProfile', [EditController::class, 'editProfile']);
-Route::post('/editProfile', [EditController::class, 'editedProfile']);
+Route::post('/profileM', [EditController::class, 'editedProfile']);
 
 Route::get('/member', [ProductController::class, 'viewProductMember'])->middleware('auth','memberM');
 Route::get('/admin', [ProductController::class, 'viewProductAdmin'])->middleware('auth','adminM');
@@ -49,4 +49,3 @@ Route::get('/admin', [ProductController::class, 'viewProductAdmin'])->middleware
 Route::get('/adminSearch', [ProductController::class, 'viewSearchPageAdmin']);
 Route::get('/memberSearch', [ProductController::class, 'viewSearchPageMember']);
 
-// Route::get()
