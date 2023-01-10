@@ -62,3 +62,20 @@
     text-align: right;
     float: right;
 }
+
+.member, .admin{
+    text-align: center;
+}
+
+.text-profile{
+    font-size: 4vw;
+}
+
+.search-text{
+    font-size: 7vh;
+    text-align: center;
+}
+
+.nav-item-logout{
+    text-align: right;
+}

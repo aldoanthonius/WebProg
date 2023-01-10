@@ -6,6 +6,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\EditController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,8 +34,19 @@ Route::post('/logout',[LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'register']);
 Route::post('/register', [RegisterController::class, 'afterRegis']);
 
-Route::get('/member', [MemberController::class, 'member'])->middleware('auth','memberM');
-Route::get('/admin', [AdminController::class, 'admin'])->middleware('auth','adminM');
+// Route::get('/member', [MemberController::class, 'member'])->middleware('auth','memberM');
+// Route::get('/admin', [AdminController::class, 'admin'])->middleware('auth','adminM');
 
 Route::get('/profileM', [ProfileController::class,'profileM'])->middleware('auth','memberM');
 Route::get('/profileA', [ProfileController::class,'profileA'])->middleware('auth','adminM');
+
+Route::get('/editProfile', [EditController::class, 'editProfile']);
+Route::post('/editProfile', [EditController::class, 'editedProfile']);
+
+Route::get('/member', [ProductController::class, 'viewProductMember'])->middleware('auth','memberM');
+Route::get('/admin', [ProductController::class, 'viewProductAdmin'])->middleware('auth','adminM');
+
+Route::get('/adminSearch', [ProductController::class, 'viewSearchPageAdmin']);
+Route::get('/memberSearch', [ProductController::class, 'viewSearchPageMember']);
+
+// Route::get()

@@ -1,6 +1,10 @@
 @extends('navbar')
+@section('body')
 @section('navhome')
 <a class="nav-link active" aria-current="page" href="/member">Home</a>
+@endsection
+@section('item0')
+<a class="nav-link" href="/memberSearch">Search</a>
 @endsection
 @section('item1')
 <a class="nav-link" href="#">Cart</a>
@@ -12,7 +16,33 @@
 <div>
     <form action="/logout" method="POST">
         @csrf
-        <button type="submit" class="btn btn-danger">Sign Out</button>
+        <button type="submit" class="btn btn-info">Sign Out</button>
     </form>
+</div>
+@endsection
+
+@foreach ($profile as $p)
+
+@endforeach
+<div class="member">
+    <div class="text-profile">
+        My Profile
+    </div>
+    <div class="text-member">
+        member
+    </div>
+    <div>
+        username : {{ $profile->username}}
+        <br>
+        {{ $profile->email}}
+        <br>
+        Address : {{ $profile->address}}
+        <br>
+        Phone : {{ $profile->phone}}
+    </div>
+    <div>
+        <a href="/editProfile">edit profile</a>
+        <a href="">edit password</a>
+    </div>
 </div>
 @endsection
