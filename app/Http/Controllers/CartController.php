@@ -2,23 +2,41 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Product;
 
 class CartController extends Controller
 {
-    //
+
+    public function addToCart($id){
+        $product = Product::find($id);
+        $cart = session()->get('cart');
+        if(!$cart){
+            $cart = [];
+        }
+        if(isset($cart[$id])) {
+            $cart[$id]['qty'] += 1;
+        } else {
+            $cart[$id] = [
+                'product' => $product,
+                'qty' => 1
+            ];
+        }
+        session()->put('cart', $cart);
+        return redirect('/member');
+    }
+
     public function viewCart(){
         $cart = session()->get('cart');
         if(!$cart){
             $cart = [];
         }
-        $n_cart = count($cart);
         $total_price = 0;
-        for($i = 0; $i < $n_cart; $i++){
-            $__price = $cart[$i][0]->price;
-            $__qty = $cart[$i][1];
+        foreach($cart as $key => $entry){
+            $__price = $entry['product']->price;
+            $__qty = $entry['qty'];
             $total_price += $__price * $__qty;
         }
         return view('cart', compact('cart', 'total_price'));
     }
+
 }

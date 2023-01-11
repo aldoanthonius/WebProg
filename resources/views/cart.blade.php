@@ -50,6 +50,7 @@
                 method="POST"
                 style="padding: 1em">
                 <a
+                    href=""
                     class="btn btn-primary"
                     type="submit">
                     Check Out({{count($cart)}})
@@ -60,14 +61,22 @@
 </div>
 
 <div class="row row-cols-1 row-cols-md-4 g-4 m-2">
-    @foreach($cart as $product)
+    @foreach($cart as $key => $entry)
         <div class="col">
             <div class="card h-100 text-black  bg-light mb-3" style="width: 90%">
-                <img class="card-img-top" src="{{$product[0]->image}}" alt="Image Not Found" style="width: 100%; height:70%">
+                <img class="card-img-top" src="{{$entry['product']->image}}" alt="Image Not Found" style="width: 100%; height:70%">
                 <div class="card-body">
-                    <h5 class="card-title">{{ $product[0]->name }}</h5>
-                    <p class="card-text">Rp {{number_format($product[0]->price,0, ',')}}</p>
-                    <a href="" class="btn btn-primary">More Detail</a>
+                    <h5 class="card-title">{{ $entry['product']->name }}</h5>
+                    <p class="card-text">Rp {{number_format($entry['product']->price,0, ',')}}</p>
+                    <p class="card-text">Qty: {{$entry['qty']}}</p>
+                    <div class="container-fluid">
+                        <a href="" class="btn btn-primary">
+                            Edit Cart
+                        </a>
+                        <a href="" class="btn btn-danger">
+                            Remove from Cart
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
