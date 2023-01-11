@@ -34,6 +34,39 @@ class CartController extends Controller
         return redirect('/member');
     }
 
+    public function updateCart(Request $request){
+        $id = $request->id;
+        $product = Product::find($id);
+        $stock = $product->stock;
+        $request->validate(
+            [
+                'quantity' => "required|min:1|max:$stock|integer"
+            ]
+        );
+        $qty = $request->quantity;
+        $cart = session()->get('cart');
+        if(!$cart){
+            $cart = [];
+        }
+        if(isset($cart[$id])) {
+            $cart[$id]['qty'] = $qty;
+        } else {
+            $cart[$id] = [
+                'product' => $product,
+                'qty' => $qty
+            ];
+        }
+        session()->put('cart', $cart);
+        return redirect('/cart');
+    }
+
+    public function editCart($id){
+        $product = Product::find($id);
+        $cart = session()->get('cart');
+        $qty = $cart[$id]['qty'];
+        return view('edit_cart', compact('product', 'qty'));
+    }
+
     public function removeFromCart(Request $request){
         $id = $request->id;
         $cart = session()->get('cart');

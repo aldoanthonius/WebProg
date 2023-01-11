@@ -63,23 +63,32 @@
 <div class="row row-cols-1 row-cols-md-4 g-4 m-2">
     @foreach($cart as $key => $entry)
         <div class="col">
-            <div class="card h-100 text-black  bg-light mb-3" style="width: 90%">
+            <div class="card m-4 text-black  bg-light mb-3" style="width: 90%">
                 <img class="card-img-top" src="{{$entry['product']->image}}" alt="Image Not Found" style="width: 100%; height:70%">
                 <div class="card-body">
                     <h5 class="card-title">{{ $entry['product']->name }}</h5>
                     <p class="card-text">Rp {{number_format($entry['product']->price,0, ',')}}</p>
                     <p class="card-text">Qty: {{$entry['qty']}}</p>
-                    <div class="container-fluid">
-                        <a href="" class="btn btn-primary">
+                    <div
+                        style="display: flex; flex-direction: row">
+                        <a
+                            href="/editCart/{{$entry['product']->id}}"
+                            class="btn btn-primary"
+                            style="margin-right: 0.25em; width: 50%">
                             Edit Cart
                         </a>
-                        <form action="/removeFromCart" method="POST">
+                        <form
+                            action="/removeFromCart"
+                            method="POST"
+                            style="margin-left: 0.25em; width: 50%">
                             @csrf
                             <input
                                 type="hidden"
                                 name="id"
                                 value={{$entry['product']->id}}>
-                            <button class="btn btn-danger">
+                            <button
+                                class="btn btn-danger"
+                                style="width: 100%">
                                 Remove from Cart
                             </button>
                         </form>
