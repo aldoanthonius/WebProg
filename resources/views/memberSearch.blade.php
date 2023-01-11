@@ -10,7 +10,7 @@
 <a class="nav-link" href="/cart">Cart</a>
 @endsection
 @section('item2')
-<a class="nav-link" href="#">History</a>
+<a class="nav-link" href="/transaction_history">History</a>
 @endsection
 @section('item3')
 <a class="nav-link" href="/profileM">Profile</a>

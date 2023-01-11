@@ -55,6 +55,7 @@ Route::post('/updateCart', [CartController::class, 'updateCart'])->middleware('a
 Route::post('removeFromCart', [CartController::class, 'removeFromCart'])->middleware('auth', 'memberM');
 Route::get('/editCart/{id}', [CartController::class, 'editCart'])->middleware('auth', 'memberM');
 
+Route::get('/transaction_history', [TransactionController::class, 'get_transaction_history'])->middleware('auth', 'memberM');
 Route::post('/checkout', [TransactionController::class, 'checkout'])->middleware('auth', 'memberM');
 
 Route::get('/details/{id}', [ProductController::class, 'getDetails'])->middleware('auth');

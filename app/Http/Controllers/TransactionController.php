@@ -17,6 +17,7 @@ class TransactionController extends Controller
             date_default_timezone_set('Asia/Jakarta');
             $transaction_id = DB::table('transactions')->insertGetId(
                 [
+                    'user_id' => $profile->id,
                     'date' => date('Y-m-d')
                 ]
             );
@@ -40,5 +41,41 @@ class TransactionController extends Controller
         }
         session()->put('cart', []);
         return redirect('/member');
+    }
+
+    public function get_transaction_history(){
+        $profile = DB::table('users')->where('id', Auth::user()->id)->first();
+        $transactions = DB::table('transactions')
+            ->where('user_id', '=', $profile->id)
+            ->get();
+        $arr_transactions = [];
+        foreach($transactions as $transaction){
+            $details = DB::table('transaction_details')
+                ->where('transaction_id', '=', $transaction->id)
+                ->get();
+            $arr_details = [];
+            $total_price = 0;
+            foreach($details as $detail){
+                $product = Product::find($detail->product_id);
+                array_push(
+                    $arr_details,
+                    [
+                        'product' => $product->name,
+                        'quantity' => $detail->quantity,
+                        'price' => $product->price
+                    ]
+                );
+                $total_price += $product->price;
+            }
+            array_push(
+                $arr_transactions,
+                [
+                    'date' => $transaction->date,
+                    'details' => $arr_details,
+                    'price' => $total_price
+                ]
+            );
+        }
+        return view('transaction_history', compact('arr_transactions'));
     }
 }
