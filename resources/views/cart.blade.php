@@ -7,7 +7,7 @@
 <a class="nav-link" href="/memberSearch">Search</a>
 @endsection
 @section('item1')
-<a class="nav-link" href="#">Cart</a>
+<a class="nav-link" href="/cart">Cart</a>
 @endsection
 @section('item2')
 <a class="nav-link" href="#">History</a>
@@ -73,7 +73,7 @@
                         <a href="" class="btn btn-primary">
                             Edit Cart
                         </a>
-                        <a href="" class="btn btn-danger">
+                        <a href="/removeFromCart/{{$entry['product']->id}}" class="btn btn-danger">
                             Remove from Cart
                         </a>
                     </div>

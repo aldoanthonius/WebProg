@@ -25,13 +25,22 @@ class CartController extends Controller
         return redirect('/member');
     }
 
+    public function removeFromCart($id){
+        $cart = session()->get('cart');
+        if(isset($cart[$id])) {
+            unset($cart[$id]);
+        }
+        session()->put('cart', $cart);
+        return $this->viewCart();
+    }
+
     public function viewCart(){
         $cart = session()->get('cart');
         if(!$cart){
             $cart = [];
         }
         $total_price = 0;
-        foreach($cart as $key => $entry){
+        foreach($cart as $key => $entry) {
             $__price = $entry['product']->price;
             $__qty = $entry['qty'];
             $total_price += $__price * $__qty;
