@@ -25,4 +25,9 @@ class ProductController extends Controller
         $products = Product::where('name',"LIKE", "%$request->search%")->simplePaginate(4);
         return view('memberSearch')->with('products', $products);
     }
+
+    public function getDetails($id){
+        $product = Product::find($id);
+        return view('product_detail', compact('product'));
+    }
 }

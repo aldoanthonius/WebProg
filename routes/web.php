@@ -51,6 +51,8 @@ Route::get('/cart', [CartController::class, 'viewCart'])->middleware('auth', 'me
 Route::get('/addToCart/{id}', [CartController::class, 'addToCart'])->middleware('auth', 'memberM');
 Route::get('removeFromCart/{id}', [CartController::class, 'removeFromCart'])->middleware('auth', 'memberM');
 
+Route::get('/details/{id}', [ProductController::class, 'getDetails'])->middleware('auth');
+
 Route::get('/adminSearch', [ProductController::class, 'viewSearchPageAdmin']);
 Route::get('/memberSearch', [ProductController::class, 'viewSearchPageMember']);
 
