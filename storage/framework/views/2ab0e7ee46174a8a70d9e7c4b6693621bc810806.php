@@ -128,7 +128,7 @@ unset($__errorArgs, $__bag); ?>
               <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Save Update</button>
 
             </form>
-            <a href="/profileM">back</a>
+            <a href="/profileM" class="btn btn-danger">back</a>
         </main>
 
     </div>

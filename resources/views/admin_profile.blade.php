@@ -37,14 +37,12 @@
         <br>
         {{$profile->email}}
         <br>
-        Password : {{ $profile->password}}
-        <br>
         Address : {{ $profile->address}}
         <br>
         Phone : {{ $profile->phone}}
     </div>
     <div>
-        <a href="/editPasswordA">edit password</a>
+        <a href="/editPasswordA" class="btn btn-light">edit password</a>
     </div>
 </div>
 @endsection

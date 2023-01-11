@@ -60,6 +60,9 @@
               </div>
 
               <button class="w-100 btn btn-lg btn-primary mt-3" type="submit">Save Update</button>
-              <a href="/profileM">Back</a>
+              <div>
+                <br>
+                <a href="/profileM" class="btn btn-danger">Back</a>
+              </div>
             </form>
 @endsection

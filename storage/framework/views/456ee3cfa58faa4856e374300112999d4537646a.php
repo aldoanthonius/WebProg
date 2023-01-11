@@ -50,8 +50,9 @@
 
     </div>
     <div>
-        <a href="/editProfile">edit profile</a>
-        <a href="/editPasswordM">edit password</a>
+
+        <a href="/editProfile" class="btn btn-primary">edit profile</a>
+        <a href="/editPasswordM" class="btn btn-light" id="btn">edit password</a>
     </div>
 </div>
 <?php $__env->stopSection(); ?>

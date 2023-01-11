@@ -39,9 +39,6 @@
         <?php echo e($profile->email); ?>
 
         <br>
-        Password : <?php echo e($profile->password); ?>
-
-        <br>
         Address : <?php echo e($profile->address); ?>
 
         <br>
@@ -49,7 +46,7 @@
 
     </div>
     <div>
-        <a href="/editPasswordA">edit password</a>
+        <a href="/editPasswordA" class="btn btn-light">edit password</a>
     </div>
 </div>
 <?php $__env->stopSection(); ?>
