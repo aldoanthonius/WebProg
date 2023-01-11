@@ -4,7 +4,7 @@
 <a class="nav-link active" aria-current="page" href="/member">Home</a>
 @endsection
 @section('item1')
-<a class="nav-link" href="#">Cart</a>
+<a class="nav-link" href="/cart">Cart</a>
 @endsection
 @section('item2')
 <a class="nav-link" href="#">History</a>
