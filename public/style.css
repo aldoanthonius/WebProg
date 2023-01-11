@@ -79,3 +79,23 @@
 .nav-item-logout{
     text-align: right;
 }
+
+.text-admin{
+    background-color: grey;
+    height: 25px;
+    width: 60px;
+    margin-left: 655px;
+    color: whitesmoke;
+}
+.text-member{
+    background-color: grey;
+    height: 25px;
+    width: 60px;
+    margin-left: 655px;
+    color: whitesmoke;
+
+}
+
+.nav-item-logout{
+    margin-left: 800px;
+}
