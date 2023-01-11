@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,6 +46,8 @@ Route::post('/profileM', [EditController::class, 'editedProfile']);
 
 Route::get('/member', [ProductController::class, 'viewProductMember'])->middleware('auth','memberM');
 Route::get('/admin', [ProductController::class, 'viewProductAdmin'])->middleware('auth','adminM');
+
+Route::get('/cart', [CartController::class, 'viewCart'])->middleware('auth', 'memberM');
 
 Route::get('/adminSearch', [ProductController::class, 'viewSearchPageAdmin']);
 Route::get('/memberSearch', [ProductController::class, 'viewSearchPageMember']);
