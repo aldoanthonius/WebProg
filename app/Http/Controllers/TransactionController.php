@@ -40,7 +40,7 @@ class TransactionController extends Controller
             }
         }
         session()->put('cart', []);
-        return redirect('/member');
+        return $this->get_transaction_history();
     }
 
     public function get_transaction_history(){

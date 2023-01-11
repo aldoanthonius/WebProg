@@ -58,7 +58,10 @@ Route::get('/editCart/{id}', [CartController::class, 'editCart'])->middleware('a
 Route::get('/transaction_history', [TransactionController::class, 'get_transaction_history'])->middleware('auth', 'memberM');
 Route::post('/checkout', [TransactionController::class, 'checkout'])->middleware('auth', 'memberM');
 
-Route::get('/details/{id}', [ProductController::class, 'getDetails'])->middleware('auth');
+Route::get('/details/{id}', [ProductController::class, 'getDetails'])->middleware('auth', 'memberM');
+Route::get('/details/{id}/edit', [ProductController::class, 'getDetailsAdmin'])->middleware('auth', 'adminM');
+
+Route::post('/deleteItem', [ProductController::class, 'deleteItem'])->middleware('auth', 'adminM');
 
 Route::get('/adminSearch', [ProductController::class, 'viewSearchPageAdmin']);
 Route::get('/memberSearch', [ProductController::class, 'viewSearchPageMember']);
