@@ -46,15 +46,15 @@
                 Total Price: Rp {{number_format($total_price, 0, ',')}}
             </h4>
             <form
-                action=""
+                action="/checkout"
                 method="POST"
                 style="padding: 1em">
-                <a
-                    href=""
+                @csrf
+                <button
                     class="btn btn-primary"
                     type="submit">
                     Check Out({{count($cart)}})
-                </a>
+                </button>
             </form>
         </div>
     </div>

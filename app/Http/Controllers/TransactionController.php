@@ -2,85 +2,43 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Transaction;
-use App\Http\Requests\StoreTransactionRequest;
-use App\Http\Requests\UpdateTransactionRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class TransactionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreTransactionRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreTransactionRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Transaction  $transaction
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Transaction $transaction)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Transaction  $transaction
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Transaction $transaction)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateTransactionRequest  $request
-     * @param  \App\Models\Transaction  $transaction
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateTransactionRequest $request, Transaction $transaction)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Transaction  $transaction
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Transaction $transaction)
-    {
-        //
+    public function checkout(Request $request){
+        $cart = session()->get('cart');
+        if(count($cart) > 0){
+            $profile = DB::table('users')->where('id', Auth::user()->id)->first();
+            date_default_timezone_set('Asia/Jakarta');
+            $transaction_id = DB::table('transactions')->insertGetId(
+                [
+                    'date' => date('Y-m-d')
+                ]
+            );
+            foreach($cart as $key => $entry){
+                DB::table('transaction_details')->insert(
+                    [
+                        'transaction_id' => $transaction_id,
+                        'product_id' => $entry['product']->id,
+                        'quantity' => $entry['qty']
+                    ]
+                );
+                $stock = Product::find($entry['product']->id)->stock;
+                DB::table('products')
+                ->where('id', '=', $entry['product']->id)
+                ->update(
+                    [
+                        'stock' => $stock - $entry['qty']
+                    ]
+                );
+            }
+        }
+        session()->put('cart', []);
+        return redirect('/member');
     }
 }

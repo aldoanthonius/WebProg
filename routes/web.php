@@ -9,6 +9,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\TransactionController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,6 +54,8 @@ Route::post('/addToCart', [CartController::class, 'addToCart'])->middleware('aut
 Route::post('/updateCart', [CartController::class, 'updateCart'])->middleware('auth', 'memberM');
 Route::post('removeFromCart', [CartController::class, 'removeFromCart'])->middleware('auth', 'memberM');
 Route::get('/editCart/{id}', [CartController::class, 'editCart'])->middleware('auth', 'memberM');
+
+Route::post('/checkout', [TransactionController::class, 'checkout'])->middleware('auth', 'memberM');
 
 Route::get('/details/{id}', [ProductController::class, 'getDetails'])->middleware('auth');
 
