@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->integer('price');
             $table->string('image', 255);
+            $table->string('description', 255);
+            $table->integer('stock');
             $table->timestamps();
         });
     }
