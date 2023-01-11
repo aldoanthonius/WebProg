@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class EditController extends Controller
 {
@@ -30,6 +32,45 @@ class EditController extends Controller
 
         return redirect('/profileM')->with('success', 'Update Success');
 
+    }
+    public function viewEditPasswordM(){
+        return view('memberEditPassword');
+    }
+
+    public function viewEditPasswordA(){
+        return view('adminEditPassword');
+    }
+
+    public function editPasswordM(Request $request){
+        $request->validate([
+            'old_password'=> 'required|min:5|max:20',
+            'new_password'=> 'required|min:5|max:20|different:old_password'
+        ]);
+
+        if(Hash::check($request->old_password, auth()->user()->password)){
+            auth()->user()->update(['password'=> Hash::make($request->new_password)]);
+            return redirect('profileM')->with('updatedPassword','Your password has been updated');
+        }
+
+        else{
+            return redirect('editPasswordM')->with('failedUpdatePassword', 'Your current password does not exist');
+        }
+    }
+
+    public function editPasswordA(Request $request){
+        $request->validate([
+            'old_password'=> 'required|min:5|max:20',
+            'new_password'=> 'required|min:5|max:20|different:old_password'
+        ]);
+
+        if(Hash::check($request->old_password, auth()->user()->password)){
+            auth()->user()->update(['password'=> Hash::make($request->new_password)]);
+            return redirect('profileA')->with('updatedPassword','Your password has been updated');
+        }
+
+        else{
+            return redirect('editPasswordA')->with('failedUpdatePassword', 'Your current password does not exist');
+        }
     }
 }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -20,7 +21,7 @@ class RegisterController extends Controller
             'address'=>'required|min:5'
         ]);
 
-        $dataValid['password'] = bcrypt($dataValid['password']);
+        $dataValid['password'] = Hash::make($dataValid['password']);
         User::create($dataValid);
 
 

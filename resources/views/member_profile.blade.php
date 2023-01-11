@@ -21,9 +21,14 @@
 </div>
 @endsection
 
-@foreach ($profile as $p)
+        @if (session()->has('updatedPassword'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('updatedPassword')}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        @endif
 
-@endforeach
+
 <div class="member">
     <div class="text-profile">
         My Profile
@@ -36,13 +41,15 @@
         <br>
         {{ $profile->email}}
         <br>
+        Password : {{ $profile->password}}
+        <br>
         Address : {{ $profile->address}}
         <br>
         Phone : {{ $profile->phone}}
     </div>
     <div>
         <a href="/editProfile">edit profile</a>
-        <a href="">edit password</a>
+        <a href="/editPasswordM">edit password</a>
     </div>
 </div>
 @endsection
