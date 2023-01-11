@@ -20,9 +20,15 @@
 </div>
 <?php $__env->stopSection(); ?>
 
-<?php $__currentLoopData = $profile; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $p): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <?php if(session()->has('updatedPassword')): ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?php echo e(session('updatedPassword')); ?>
 
-<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        <?php endif; ?>
+
+
 <div class="member">
     <div class="text-profile">
         My Profile
@@ -45,7 +51,7 @@
     </div>
     <div>
         <a href="/editProfile">edit profile</a>
-        <a href="">edit password</a>
+        <a href="/editPasswordM">edit password</a>
     </div>
 </div>
 <?php $__env->stopSection(); ?>

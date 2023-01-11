@@ -49,3 +49,8 @@ Route::get('/admin', [ProductController::class, 'viewProductAdmin'])->middleware
 Route::get('/adminSearch', [ProductController::class, 'viewSearchPageAdmin']);
 Route::get('/memberSearch', [ProductController::class, 'viewSearchPageMember']);
 
+Route::get('/editPasswordM', [EditController::class, 'viewEditPasswordM']);
+Route::post('/editPasswordM', [EditController::class, 'editPasswordM']);
+
+Route::get('/editPasswordA', [EditController::class, 'viewEditPasswordA']);
+Route::post('/editPasswordA', [EditController::class, 'editPasswordA']);
