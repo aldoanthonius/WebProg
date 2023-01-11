@@ -48,8 +48,8 @@ Route::get('/member', [ProductController::class, 'viewProductMember'])->middlewa
 Route::get('/admin', [ProductController::class, 'viewProductAdmin'])->middleware('auth','adminM');
 
 Route::get('/cart', [CartController::class, 'viewCart'])->middleware('auth', 'memberM');
-Route::get('/addToCart/{id}', [CartController::class, 'addToCart'])->middleware('auth', 'memberM');
-Route::get('removeFromCart/{id}', [CartController::class, 'removeFromCart'])->middleware('auth', 'memberM');
+Route::post('/addToCart', [CartController::class, 'addToCart'])->middleware('auth', 'memberM');
+Route::post('removeFromCart', [CartController::class, 'removeFromCart'])->middleware('auth', 'memberM');
 
 Route::get('/details/{id}', [ProductController::class, 'getDetails'])->middleware('auth');
 

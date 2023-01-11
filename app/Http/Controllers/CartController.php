@@ -3,29 +3,39 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
 
-    public function addToCart($id){
+    public function addToCart(Request $request){
+        $id = $request->id;
         $product = Product::find($id);
+        $stock = $product->stock;
+        $request->validate(
+            [
+                'quantity' => "required|min:1|max:$stock|integer"
+            ]
+        );
+        $qty = $request->quantity;
         $cart = session()->get('cart');
         if(!$cart){
             $cart = [];
         }
         if(isset($cart[$id])) {
-            $cart[$id]['qty'] += 1;
+            $cart[$id]['qty'] = $qty;
         } else {
             $cart[$id] = [
                 'product' => $product,
-                'qty' => 1
+                'qty' => $qty
             ];
         }
         session()->put('cart', $cart);
         return redirect('/member');
     }
 
-    public function removeFromCart($id){
+    public function removeFromCart(Request $request){
+        $id = $request->id;
         $cart = session()->get('cart');
         if(isset($cart[$id])) {
             unset($cart[$id]);

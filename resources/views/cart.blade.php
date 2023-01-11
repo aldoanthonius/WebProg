@@ -73,9 +73,16 @@
                         <a href="" class="btn btn-primary">
                             Edit Cart
                         </a>
-                        <a href="/removeFromCart/{{$entry['product']->id}}" class="btn btn-danger">
-                            Remove from Cart
-                        </a>
+                        <form action="/removeFromCart" method="POST">
+                            @csrf
+                            <input
+                                type="hidden"
+                                name="id"
+                                value={{$entry['product']->id}}>
+                            <button class="btn btn-danger">
+                                Remove from Cart
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
