@@ -38,11 +38,14 @@
               <li class="nav-item">
                 <?php echo $__env->yieldContent('item3'); ?>
               </li>
-              <li class="nav-item">
+              <li class="nav-item-add">
                 <?php echo $__env->yieldContent('addItem'); ?>
               </li>
-              <li class="nav-item-logout">
-                <?php echo $__env->yieldContent('logoutItem'); ?>
+              <li class="nav-item">
+                <div class="nav-item-logout">
+
+                    <?php echo $__env->yieldContent('logoutItem'); ?>
+                </div>
               </li>
             </ul>
           </div>

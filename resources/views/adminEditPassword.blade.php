@@ -7,7 +7,7 @@
 <a class="nav-link" href="/adminSearch">Search</a>
 @endsection
 @section('addItem')
-<a class="nav-link" href="#">Add Item</a>
+<a class="nav-link" href="/adminAddItem">Add Item</a>
 @endsection
 @section('item3')
 <a class="nav-link" href="/profileA">Profile</a>

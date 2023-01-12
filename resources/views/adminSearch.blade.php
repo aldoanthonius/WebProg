@@ -7,7 +7,7 @@
 <a class="nav-link" href="/adminSearch">Search</a>
 @endsection
 @section('addItem')
-<a class="nav-link" href="#">Add Item</a>
+<a class="nav-link" href="/adminAddItem">Add Item</a>
 @endsection
 @section('item3')
 <a class="nav-link" href="/profileA">Profile</a>
@@ -34,11 +34,11 @@
     @foreach($products as $product)
         <div class="col">
             <div class="card h-100 text-black  bg-light mb-3" style="width: 90%">
-                <img class="card-img-top" src="{{$product->image}}" alt="Image Not Found" style="width: 100%; height:70%">
+                <img class="card-img-top" src="{{ asset('storage/' . $product->image) }}" alt="Image Not Found" style="width: 100%; height:70%">
                 <div class="card-body">
                     <h5 class="card-title">{{ $product->name }}</h5>
                     <p class="card-text">Rp {{number_format($product->price,0, ',')}}</p>
-                    <a href="/details/{{$product->id}}/edit" class="btn btn-primary">More Detail</a>
+                    <a href="" class="btn btn-primary">More Detail</a>
                 </div>
             </div>
         </div>

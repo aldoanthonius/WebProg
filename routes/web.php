@@ -8,9 +8,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\TransactionController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,20 +46,6 @@ Route::post('/profileM', [EditController::class, 'editedProfile']);
 Route::get('/member', [ProductController::class, 'viewProductMember'])->middleware('auth','memberM');
 Route::get('/admin', [ProductController::class, 'viewProductAdmin'])->middleware('auth','adminM');
 
-Route::get('/cart', [CartController::class, 'viewCart'])->middleware('auth', 'memberM');
-Route::post('/addToCart', [CartController::class, 'addToCart'])->middleware('auth', 'memberM');
-Route::post('/updateCart', [CartController::class, 'updateCart'])->middleware('auth', 'memberM');
-Route::post('removeFromCart', [CartController::class, 'removeFromCart'])->middleware('auth', 'memberM');
-Route::get('/editCart/{id}', [CartController::class, 'editCart'])->middleware('auth', 'memberM');
-
-Route::get('/transaction_history', [TransactionController::class, 'get_transaction_history'])->middleware('auth', 'memberM');
-Route::post('/checkout', [TransactionController::class, 'checkout'])->middleware('auth', 'memberM');
-
-Route::get('/details/{id}', [ProductController::class, 'getDetails'])->middleware('auth', 'memberM');
-Route::get('/details/{id}/edit', [ProductController::class, 'getDetailsAdmin'])->middleware('auth', 'adminM');
-
-Route::post('/deleteItem', [ProductController::class, 'deleteItem'])->middleware('auth', 'adminM');
-
 Route::get('/adminSearch', [ProductController::class, 'viewSearchPageAdmin']);
 Route::get('/memberSearch', [ProductController::class, 'viewSearchPageMember']);
 
@@ -71,3 +54,6 @@ Route::post('/editPasswordM', [EditController::class, 'editPasswordM']);
 
 Route::get('/editPasswordA', [EditController::class, 'viewEditPasswordA']);
 Route::post('/editPasswordA', [EditController::class, 'editPasswordA']);
+
+Route::get('/adminAddItem', [ProductController::class, 'addItem']);
+Route::post('/adminAddItem', [ProductController::class, 'addedItem']);

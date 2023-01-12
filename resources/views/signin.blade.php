@@ -23,7 +23,7 @@
                 @csrf
               <div class="form-floating">
                 <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                id="email" placeholder="name@example.com" required value="{{ old('email')}}">
+                id="email" placeholder="name@example.com" required value="{{Cookie::get('emailCookie') !== null ? Cookie::get('emailCookie') : "" }}">
                 <label for="email">Email address</label>
                 @error('email')
                     <div class="invalid-feedback">
@@ -38,7 +38,7 @@
 
               <div class="checkbox mb-3">
                 <label>
-                  <input type="checkbox" value="remember-me"> Remember me
+                  <input type="checkbox" name="remember" id="remember" checked={{Cookie::get('emailCookie') !== null}}> Remember me
                 </label>
               </div>
               <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>

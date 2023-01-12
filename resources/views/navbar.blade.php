@@ -38,11 +38,14 @@
               <li class="nav-item">
                 @yield('item3')
               </li>
-              <li class="nav-item">
+              <li class="nav-item-add">
                 @yield('addItem')
               </li>
-              <li class="nav-item-logout">
-                @yield('logoutItem')
+              <li class="nav-item">
+                <div class="nav-item-logout">
+
+                    @yield('logoutItem')
+                </div>
               </li>
             </ul>
           </div>

@@ -28,7 +28,7 @@
     <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="col">
             <div class="card h-100 text-black  bg-light mb-3" style="width: 90%">
-                <img class="card-img-top" src="<?php echo e($product->image); ?>" alt="Image Not Found" style="width: 100%; height:70%">
+                <img class="card-img-top" src="<?php echo e(asset('storage/' . $product->image)); ?>" alt="Image Not Found" style="width: 100%; height:70%">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo e($product->name); ?></h5>
                     <p class="card-text">Rp <?php echo e(number_format($product->price,0, ',')); ?></p>

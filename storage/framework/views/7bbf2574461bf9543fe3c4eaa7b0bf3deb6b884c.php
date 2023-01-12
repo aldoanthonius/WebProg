@@ -6,7 +6,7 @@
 <a class="nav-link" href="/adminSearch">Search</a>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('addItem'); ?>
-<a class="nav-link" href="#">Add Item</a>
+<a class="nav-link" href="/adminAddItem">Add Item</a>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('item3'); ?>
 <a class="nav-link" href="/profileA">Profile</a>

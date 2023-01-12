@@ -7,10 +7,10 @@
 <a class="nav-link" href="/memberSearch">Search</a>
 @endsection
 @section('item1')
-<a class="nav-link" href="/cart">Cart</a>
+<a class="nav-link" href="#">Cart</a>
 @endsection
 @section('item2')
-<a class="nav-link" href="/transaction_history">History</a>
+<a class="nav-link" href="#">History</a>
 @endsection
 @section('item3')
 <a class="nav-link" href="/profileM">Profile</a>
@@ -37,11 +37,11 @@
     @foreach($products as $product)
         <div class="col">
             <div class="card h-100 text-black  bg-light mb-3" style="width: 90%">
-                <img class="card-img-top" src="{{$product->image}}" alt="Image Not Found" style="width: 100%; height:70%">
+                <img class="card-img-top" src="{{ asset('storage/' . $product->image) }}" alt="Image Not Found" style="width: 100%; height:70%">
                 <div class="card-body">
                     <h5 class="card-title">{{ $product->name }}</h5>
                     <p class="card-text">Rp {{number_format($product->price,0, ',')}}</p>
-                    <a href="/details/{{$product->id}}" class="btn btn-primary">More Detail</a>
+                    <a href="" class="btn btn-primary">More Detail</a>
                 </div>
             </div>
         </div>

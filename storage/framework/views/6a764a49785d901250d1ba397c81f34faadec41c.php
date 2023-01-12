@@ -32,7 +32,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                id="email" placeholder="name@example.com" required value="<?php echo e(old('email')); ?>">
+                id="email" placeholder="name@example.com" required value="<?php echo e(Cookie::get('emailCookie') !== null ? Cookie::get('emailCookie') : ""); ?>">
                 <label for="email">Email address</label>
                 <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -55,7 +55,7 @@ unset($__errorArgs, $__bag); ?>
 
               <div class="checkbox mb-3">
                 <label>
-                  <input type="checkbox" value="remember-me"> Remember me
+                  <input type="checkbox" name="remember" id="remember" checked=<?php echo e(Cookie::get('emailCookie') !== null); ?>> Remember me
                 </label>
               </div>
               <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
