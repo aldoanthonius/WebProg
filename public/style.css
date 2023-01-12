@@ -97,5 +97,10 @@
 }
 
 .nav-item-logout{
-    margin-left: 800px;
+    margin-left: 850px;
+    position: fixed;
+}
+.nav-item-add{
+    margin-left: 900px;
+    position: fixed;
 }

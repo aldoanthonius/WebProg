@@ -20,114 +20,114 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'Blue T-shirt',
                 'price' => 10000,
-                'image' => 'https://tinyurl.com/2xp4vbdv',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'stock' => 4
+                'description' =>'Great Blue Shirt',
+                'stock' => 20,
+                'image' => "images/2.jpg"
             ],
             [
                 'name' => 'Red T-shirt',
                 'price' => 10000,
-                'image' => 'https://tinyurl.com/ye8w2e7m',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'stock' => 4
+                'description' =>'Great Red Shirt',
+                'stock' => 20,
+                'image' => 'images/1.jpg'
             ],
             [
                 'name' => 'Yellow T-shirt',
                 'price' => 30000,
-                'image' => 'https://tinyurl.com/54yhjnj7',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'stock' => 4
+                'description' =>'Perfect Yellow Shirt',
+                'stock' => 20,
+                'image' => 'images/3.jpg'
             ],
             [
                 'name' => 'Hype Beast Jacket',
                 'price' => 20000,
-                'image' => 'https://tinyurl.com/ytft6kc8',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'stock' => 4
+                'description' =>'Cool Jacket',
+                'stock' => 20,
+                'image' => 'images/4.jpg'
             ],
             [
                 'name' => 'Purple Jacket',
                 'price' => 10000,
-                'image' => 'https://tinyurl.com/24w3yd4x',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'stock' => 4
+                'description' =>'Cool Purple Jacket',
+                'stock' => 20,
+                'image' => 'images/5.jpg'
             ],
             [
                 'name' => 'Black Short',
                 'price' => 10000,
-                'image' => 'https://tinyurl.com/24m7rtaa',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'stock' => 4
+                'description' =>'Simple Black Short',
+                'stock' => 20,
+                'image' => 'images/6.jpg'
             ],
             [
                 'name' => 'Blue Short',
                 'price' => 10000,
-                'image' => 'https://tinyurl.com/2wxd6kcd',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'stock' => 4
+                'description' =>'Great Blue Short',
+                'stock' => 20,
+                'image' => 'images/7.jpg'
             ],
             [
                 'name' => 'Black Hoodie',
                 'price' => 10000,
-                'image' => 'https://tinyurl.com/3smmdnhp',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'stock' => 4
+                'description' =>'Cool and Simple Hoodie',
+                'stock' => 20,
+                'image' => 'images/8.jpg'
             ],
             [
                 'name' => 'White T-shirt',
                 'price' => 45000,
-                'image' => 'https://tinyurl.com/334mmb6r',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'stock' => 4
+                'description' =>'Simple T-shirt',
+                'stock' => 20,
+                'image' => 'images/9.jpg'
             ],
             [
                 'name' => 'Yellow Skirt',
                 'price' => 50500,
-                'image' => 'https://tinyurl.com/2rypry6v',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'stock' => 4
+                'description' =>'Beautiful Skirt',
+                'stock' => 20,
+                'image' => 'images/10.jpg'
             ],
             [
                 'name' => 'Purple Hoodie',
                 'price' => 80500,
-                'image' => 'https://tinyurl.com/yc6eb78z',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'stock' => 4
+                'description' =>'Cool Purple Hoodie',
+                'stock' => 20,
+                'image' => 'images/11.jpg'
             ],
             [
                 'name' => 'Zig Zag Shirt',
                 'price' => 40000,
-                'image' => 'https://tinyurl.com/33v8f3tu',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'stock' => 4
+                'description' =>'Amazing Zig Zag Shirt',
+                'stock' => 20,
+                'image' => 'images/12.jpg'
             ],
             [
                 'name' => 'Orange Short',
                 'price' => 8000,
-                'image' => 'https://tinyurl.com/4458edfv',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'stock' => 4
+                'description' =>'Simple Orange Short',
+                'stock' => 20,
+                'image' => 'images/13.jpg'
             ],
             [
                 'name' => 'Long Jeans',
                 'price' => 70000,
-                'image' => 'https://tinyurl.com/yu45p9y9',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'stock' => 4
+                'description' =>'Long Jeans',
+                'stock' => 20,
+                'image' => 'images/14.jpg'
             ],
             [
                 'name' => 'Green Jacket',
                 'price' => 10000,
-                'image' => 'https://tinyurl.com/2p828fv6',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'stock' => 4
+                'description' =>'Cool Green Jacket',
+                'stock' => 20,
+                'image' => 'images/15.jpg'
             ],
             [
                 'name' => 'White Hoodie',
                 'price' => 11000,
-                'image' => 'https://tinyurl.com/3dk74rn2',
-                'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'stock' => 4
+                'description' =>'Simple and Cool White Hoodie',
+                'stock' => 20,
+                'image' => 'images/16.jpg'
             ],
         ]);
     }
