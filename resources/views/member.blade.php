@@ -7,10 +7,10 @@
 <a class="nav-link" href="/memberSearch">Search</a>
 @endsection
 @section('item1')
-<a class="nav-link" href="#">Cart</a>
+<a class="nav-link" href="/cart">Cart</a>
 @endsection
 @section('item2')
-<a class="nav-link" href="#">History</a>
+<a class="nav-link" href="/transaction_history">History</a>
 @endsection
 @section('item3')
 <a class="nav-link" href="/profileM">Profile</a>
@@ -33,7 +33,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $product->name }}</h5>
                     <p class="card-text">Rp {{number_format($product->price,0, ',')}}</p>
-                    <a href="" class="btn btn-primary">More Detail</a>
+                    <a href="/details/{{$product->id}}" class="btn btn-primary">More Detail</a>
                 </div>
             </div>
         </div>

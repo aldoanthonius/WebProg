@@ -35,7 +35,7 @@
             style="width: 20%; margin-right: 1em">
             <img
                 class="card-img-top"
-                src="{{$product->image}}"
+                src="{{ asset('storage/' . $product->image) }}"
                 alt="Image Not Found"
                 style="width: 100%">
         </div>

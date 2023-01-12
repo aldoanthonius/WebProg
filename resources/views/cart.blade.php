@@ -64,7 +64,7 @@
     @foreach($cart as $key => $entry)
         <div class="col">
             <div class="card m-4 text-black  bg-light mb-3" style="width: 90%">
-                <img class="card-img-top" src="{{$entry['product']->image}}" alt="Image Not Found" style="width: 100%; height:70%">
+                <img class="card-img-top" src="{{ asset('storage/' . $entry['product']->image)}}" alt="Image Not Found" style="width: 100%; height:70%">
                 <div class="card-body">
                     <h5 class="card-title">{{ $entry['product']->name }}</h5>
                     <p class="card-text">Rp {{number_format($entry['product']->price,0, ',')}}</p>

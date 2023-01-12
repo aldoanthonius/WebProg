@@ -7,10 +7,10 @@
 <a class="nav-link" href="/memberSearch">Search</a>
 @endsection
 @section('item1')
-<a class="nav-link" href="#">Cart</a>
+<a class="nav-link" href="/cart">Cart</a>
 @endsection
 @section('item2')
-<a class="nav-link" href="#">History</a>
+<a class="nav-link" href="/transaction_history">History</a>
 @endsection
 @section('logoutItem')
 <div>
